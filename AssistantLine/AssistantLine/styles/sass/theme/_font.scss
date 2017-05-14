@@ -1,0 +1,29 @@
+$fz-xs  : 18px;
+$fz-s   : 20px;
+$fz-m   : 24px;
+$fz-l   : 28px;
+$fz-xl  : 40px;
+$fz-xll : 60px;
+
+@font-face {
+  font-family: 'RSU_Regular';
+  src: url('font/RSU_Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'RSU_BOLD';
+  src: url('font/RSU_BOLD.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RSU_light';
+  src: url('font/RSU_light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+$font : 'RSU_Regular';
+$font-bold : 'font/RSU_BOLD';
+$font-light : 'RSU_light';

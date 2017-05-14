@@ -1,0 +1,19 @@
+.bottom-action {
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	height: 60px;
+	z-index: 100;
+	display:flex;
+justify-content:space-between;
+	button {
+		border:0;
+		color:white!important;
+		padding: 10px;
+		flex-grow:1;
+		&.no-grow  {
+			flex-grow:0;
+		}
+	}
+}

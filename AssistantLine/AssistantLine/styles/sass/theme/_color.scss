@@ -1,0 +1,71 @@
+/*=============================
+=            Color            =
+=============================*/
+$blue            : #72a2b4;
+$darkblue        : #334761;
+$lightblue       : #7facbd;
+$fabblue         : #31c3c5;
+$fabhoverblue    : #2aa7a9;
+
+$brown           : #463821;
+$lightbrown      : #d49b40;
+$softbrown       : #dad7d3;
+
+$verylightyellow : #f1e8dc;
+
+$black           : #000000;
+$lightblack      : #333333;
+
+$lighestgrey     : #f0f0f0;
+$lighergrey      : #e7e7e7;
+$lightgrey       : #d7d7d7;
+$grey            : #c2c2c2;
+$darkgrey        : #3e3e3e;
+$darkergrey      : #939393;
+
+$white           : #ffffff;
+
+$redwarning      : #d32424;
+
+$red             : #ff0000;
+$orange          : #f99403;
+$yellow          : #fff200;
+
+$darkgreen       : #d49b40;
+$green           : #157B3E;
+
+$baseColor       : $blue;
+$baseColorLight  : lighten($baseColor, 50%);
+$baseColorDark   : $darkblue ;
+
+$tableHeadColor : $brown;
+$tableDataColor : $grey;
+
+$labelColor 	: $blue;
+$FabColor       :$fabblue;
+$FabHoverColor  :$fabhoverblue;
+/*=====  End of Color  ======*/
+
+
+
+.text-blue {
+	color:$blue;
+}
+.bg-transparent {
+	background: 0;
+}
+.bg-baseColor {
+	background: $baseColor;
+}
+.bg-baseColorDark {
+	background:darken($baseColor, 32%);
+}
+.bg-baseColorBlack {
+	background:darken($baseColor, 50%);
+}
+.bg-lighergrey {
+	background:$lighergrey;
+}
+.text-white {
+	color:white;
+}

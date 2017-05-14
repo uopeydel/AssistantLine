@@ -1,0 +1,61 @@
+.pics ,.videoes{
+	position:relative;
+	width: 100px;
+	height: 70px;
+	    top: -14px;
+    left: 34px;
+	img {
+		position:absolute;
+		z-index: 3;
+		bottom:0;
+		left:0;
+		width: 70px;
+		&+img {
+			bottom:5px;
+			left:5px;
+			z-index: 2;
+			opacity: 0.6;
+			&+img {
+				bottom:10px;
+				left:10px;
+				z-index: 1;
+				opacity: 0.3;
+			}
+		}
+	}
+}
+
+.videoes {
+	.material-icons {
+		position: absolute;
+	    z-index: 10;
+	    top: 37px;
+	    left: 22px;
+	}
+}
+
+.upload-pic-box {
+	border:1px solid #ccc;
+	width:100px;
+	height:100px;
+	margin: 20px 0 0;
+	position:relative;
+	.text {
+		margin-top: 45px;
+		margin-left: 20px;
+		display: block;
+	}
+	input {
+		position: absolute;
+	    top: 0;
+	    right: 0;
+	    margin: 0;
+	    padding: 0;
+	    font-size: 20px;
+	    cursor: pointer;
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	    height: 100px;
+	    width: 100px;
+	}
+}

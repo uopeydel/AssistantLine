@@ -1,0 +1,22 @@
+.content-box {
+	&.shadow {
+		
+		box-shadow: 0px 0px 5px #888888;
+		
+	}
+	&.relative {
+		position: relative;
+	}
+	.header {
+		background:darken($baseColor, 50%);
+		color:white;
+		padding:10px 20px;
+
+	}
+	.content {
+		padding:20px;
+		background: white;
+		border:1px solid #ccc;
+		min-height: 400px;
+	}
+}

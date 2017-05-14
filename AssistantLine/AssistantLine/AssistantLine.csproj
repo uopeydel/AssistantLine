@@ -251,6 +251,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App\app.background.html" />
+    <Content Include="App\Assistant\Assistant.html" />
     <Content Include="App\index.html" />
     <Content Include="App\ListManager\AddNewORG\AddNewMember\AddNewMember.html" />
     <Content Include="App\ListManager\AddNewORG\AddNewORG.html" />
@@ -358,18 +359,17 @@
     <TypeScriptCompile Include="App\app.component.ts" />
     <TypeScriptCompile Include="App\app.module.ts" />
     <TypeScriptCompile Include="App\app.routes.ts" />
+    <TypeScriptCompile Include="App\Assistant\Assistant.component.ts" />
+    <TypeScriptCompile Include="App\Assistant\Assistant.ts" />
     <TypeScriptCompile Include="App\ListManager\AddNewORG\AddNewMember\AddNewMember.component.ts" />
     <TypeScriptCompile Include="App\ListManager\AddNewORG\AddNewORG.component.ts" />
     <TypeScriptCompile Include="App\ListManager\AddNewORG\AddNewORG.service.ts" />
     <TypeScriptCompile Include="App\ListManager\AddNewORG\AddOldMember\AddOldMember.component.ts" />
-    <TypeScriptCompile Include="App\Login\index.ts" />
     <TypeScriptCompile Include="App\Login\Login.component.ts" />
     <TypeScriptCompile Include="App\main.ts" />
-    <TypeScriptCompile Include="App\PageNotFound\index.ts" />
     <TypeScriptCompile Include="App\PageNotFound\PageNotFound.component.ts" />
     <TypeScriptCompile Include="App\Pipe\Global.pipe.ts" />
     <TypeScriptCompile Include="App\TESTauth.ts" />
-    <TypeScriptCompile Include="App\TestPage\index.ts" />
     <TypeScriptCompile Include="App\TestPage\TestPage.component.ts" />
   </ItemGroup>
   <ItemGroup>
