@@ -1,0 +1,47 @@
+﻿<h1>  TestPage </h1>
+<i class="material-icons">whatshot</i>
+
+<div>
+    <button md-button (click)="openDialog()">Open dialog</button>
+</div>
+
+<!-- ##### md01 ##### -->
+<br />
+<br />
+<div>
+
+    <input mdInput placeholder="_state" [mdAutocomplete]="StateAuto" [formControl]="stateCtrl">
+
+    <md-autocomplete #StateAuto="mdAutocomplete">
+        <md-option *ngFor="let state of filteredStates | async ; let i = index" [value]="state.namex + '  ' + state.lastnamex" (click)="clickOptionState(state)" on-mouseover="overStates(state, i)">
+            {{ state.namex }}  {{state.lastnamex}}
+        </md-option>
+    </md-autocomplete>
+</div>
+<!-- ##### md02 ##### -->
+<br />
+<br />
+<div>
+
+    <input mdInput placeholder="_project" [mdAutocomplete]="ProjectAuto" [formControl]="projectCtrl">
+
+    <md-autocomplete #ProjectAuto="mdAutocomplete">
+        <md-option *ngFor="let project of filteredProjects | async ; let i = index" [value]="project.Pnamex + '  ' + project.Plastnamex" (click)="clickOptionProject(project)" on-mouseover="overProjects(project, i)">
+            {{ project.Pnamex }}  {{project.Plastnamex}}
+        </md-option>
+    </md-autocomplete>
+
+
+</div>
+
+
+<div style="overflow-y:scroll;height:350px"
+     infinite-scroll
+     [scrollWindow]="false"
+     [infiniteScrollDistance]="scrollDistance"
+     [infiniteScrollThrottle]="throttle"
+     (scrolled)="onScrollDown()">
+    <p *ngFor="let i of arrayx">
+        {{ i }}
+    </p>
+</div>
