@@ -9,30 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+//import { Headers, RequestOptions } from '@angular/http';
+//import { Observable } from 'rxjs/Observable';
+require("rxjs/add/operator/catch");
+require("rxjs/add/operator/map");
 var router_1 = require("@angular/router");
 //import { CookieService } from 'angular2-cookie/core';
-var Login_service_1 = require("./Login.service");
-var LoginComponent = (function () {
-    function LoginComponent(loginService, router) {
-        this.loginService = loginService;
+var material_1 = require("@angular/material");
+//import * as moment from 'moment';
+var LoginService = (function () {
+    function LoginService(
+        //private location: Location, 
+        activatedRoute, 
+        //private _cookieService: CookieService,
+        router, snackBar) {
+        this.activatedRoute = activatedRoute;
         this.router = router;
-        this.loginService;
+        this.snackBar = snackBar;
     }
-    LoginComponent.prototype.login = function () {
-        this.router.navigateByUrl('/Assistant');
-        //Assistant
-        //Management
-    };
-    return LoginComponent;
+    return LoginService;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        selector: 'Login',
-        styles: [""],
-        templateUrl: '../App/Login/Login.html'
-    }),
-    __metadata("design:paramtypes", [Login_service_1.LoginService,
-        router_1.Router])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=Login.component.js.map
+LoginService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.ActivatedRoute,
+        router_1.Router,
+        material_1.MdSnackBar])
+], LoginService);
+exports.LoginService = LoginService;
+//# sourceMappingURL=Login.service.js.map

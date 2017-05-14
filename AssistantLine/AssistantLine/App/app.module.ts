@@ -19,18 +19,34 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { AppRoutes } from '../App/app.routes';
 
 import { authInterceptorService} from '../App/TESTauth';
+import { UploadFileService } from '../App/OtherService/UploadFile.service';
 
 // <<< ------- # Pipe # ------- >>>
 import * as _pipe from '../App/Pipe/Global.pipe';
 
 // <<< ------- Route PAGE ------- >>>
 import { LoginComponent } from '../App/Login/Login.component';
+import { LoginService } from '../App/Login/Login.service';
+
 import { TestPageComponent } from '../App/TestPage/TestPage.component';
 import { PageNotFoundComponent } from '../App/PageNotFound/PageNotFound.component';
 
 
+// <<< ------- Route PAGE Assistant ------- >>>
+import { AssistantComponent } from '../App/Assistant/Assistant.component';
+import { AssistantService } from '../App/Assistant/Assistant.service';
+
+
+// <<< ------- Route PAGE Management ------- >>>
+import { ManagementComponent } from '../App/Management/Management.component';
+import { ManagementService } from '../App/Management/Management.service';
+
+
+
 const APP_PROVIDERS = [
-    AddNewORGService
+    LoginService,
+    AssistantService,
+    ManagementService
 ];
 
 const AUTH_PROVIDERS = {
@@ -59,11 +75,17 @@ const AUTH_PROVIDERS = {
         // <<< ------- # Pipe # ------- >>>
         _pipe.GroupByPipe,
         _pipe.ReversePipe,
+        _pipe.ColorStatusOnlinePipe,
+        _pipe.CustomerActiveStatusPipe,
+        _pipe.AgentActiveStatusPipe,
 
         // <<< ------- Route PAGE ------- >>>
         LoginComponent,
         TestPageComponent,
         PageNotFoundComponent,
+
+        AssistantComponent,
+        ManagementComponent
        
     ],
     bootstrap: [

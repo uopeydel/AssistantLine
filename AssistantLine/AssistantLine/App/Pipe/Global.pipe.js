@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var _ = require("underscore");
 var GroupByPipe = (function () {
     function GroupByPipe() {
     }
@@ -47,4 +48,56 @@ ReversePipe = __decorate([
     core_1.Pipe({ name: 'reverse' })
 ], ReversePipe);
 exports.ReversePipe = ReversePipe;
+var ColorStatusOnlinePipe = (function () {
+    function ColorStatusOnlinePipe() {
+    }
+    ColorStatusOnlinePipe.prototype.transform = function (value) {
+        var trans = [
+            { key: 'offline', value: '#B2B1BB' },
+            { key: 'online', value: '#7FB3D5' },
+            { key: 'busy', value: '#F1948A' },
+        ];
+        return _.findWhere(trans, { key: value }).value;
+    };
+    return ColorStatusOnlinePipe;
+}());
+ColorStatusOnlinePipe = __decorate([
+    core_1.Pipe({ name: 'colorStatusOnline' })
+], ColorStatusOnlinePipe);
+exports.ColorStatusOnlinePipe = ColorStatusOnlinePipe;
+//Waiting 1   OnTalk 2
+var CustomerActiveStatusPipe = (function () {
+    function CustomerActiveStatusPipe() {
+    }
+    CustomerActiveStatusPipe.prototype.transform = function (value) {
+        var trans = [
+            { key: 1, statusName: 'Waiting' },
+            { key: 2, statusName: 'OnTalk' },
+        ];
+        return _.findWhere(trans, { key: value }).statusName;
+    };
+    return CustomerActiveStatusPipe;
+}());
+CustomerActiveStatusPipe = __decorate([
+    core_1.Pipe({ name: 'CustomerActiveStatus' })
+], CustomerActiveStatusPipe);
+exports.CustomerActiveStatusPipe = CustomerActiveStatusPipe;
+//Online 1  Offline 2 Busy 3
+var AgentActiveStatusPipe = (function () {
+    function AgentActiveStatusPipe() {
+    }
+    AgentActiveStatusPipe.prototype.transform = function (value) {
+        var trans = [
+            { key: 1, statusName: 'Online' },
+            { key: 2, statusName: 'Offline' },
+            { key: 3, statusName: 'Busy' },
+        ];
+        return _.findWhere(trans, { key: value }).statusName;
+    };
+    return AgentActiveStatusPipe;
+}());
+AgentActiveStatusPipe = __decorate([
+    core_1.Pipe({ name: 'AgentActiveStatus' })
+], AgentActiveStatusPipe);
+exports.AgentActiveStatusPipe = AgentActiveStatusPipe;
 //# sourceMappingURL=Global.pipe.js.map

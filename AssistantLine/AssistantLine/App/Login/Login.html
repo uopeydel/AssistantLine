@@ -1,17 +1,8 @@
 ﻿<div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <div ></div>
-    <div >
 
-
-        <h1> Login</h1>
-        <p>username <input type="text" ng-model="usernameLogin" placeholder="username" /></p>
-        <p>password <input type="text" ng-model="passwordLogin" placeholder="password" /></p>
-        <input type="button" value="Login" ng-click="login()" />
-        <p style="color:red;" ng-if="statusLogin!=''">{{statusLogin}}</p>
-    </div>
+    <h1> Login </h1>
+    <p>username <input type="text" [(ngModel)]="username" placeholder="username" /></p>
+    <p>password <input type="text" [(ngModel)]="password" placeholder="password" /></p>
+    <input type="button" value="Login" (click)="login()" />
 
 </div>

@@ -12,7 +12,7 @@ import * as _ from 'underscore';
 //import * as moment from 'moment';
 
 @Injectable()
-export class AssistantService {
+export class LoginService {
     constructor(
         //private location: Location, 
         private activatedRoute: ActivatedRoute,
@@ -20,7 +20,7 @@ export class AssistantService {
         private router: Router,
         private snackBar: MdSnackBar
     ) {
-       
+
     }
 
 

@@ -1,4 +1,4 @@
-﻿<div ng-controller="HelpDeskController">
+﻿<div>
 
     <div style="padding-left:50px;">
         <br /><br /><br />
@@ -7,124 +7,62 @@
         <!--   <div style="width:60%;height:60%;background-color:#F2F4F4"></div>-->
         <!--  -->
 
-        <h1> {{helpdeskData.HelpDeskUserId}} </h1>
+        <h1>  </h1>
 
-
-
-        <div id="chatBox">
-
-            <p style="text-align: left;background-color:#85c1e9;width:50%;border:1px solid black">
-                <img src="Content/image/show/add.png" style="border:5px blue solid;width:100%;height:100%;" align="middle" />
-            <p>user 001    10:59:59</p>
-            <br />
-            </p>
-
-            <p style="text-align: left;background-color:#85c1e9; width:50%;border:1px;word-break: break-all;">
-                Message ทดสอบ บทสนทนา 99999999999999999999999999999999999999 88888888888888888888888888888888888 7777777777777777777777777777777777
-            <p>user 001    12:59:59</p>
-            </p>
-
-
-            <p style="text-align: right;background-color:#2ecc71;margin-left:50%;border:1px;word-break: break-all;">
-                right 03   Message ทดสอบ บทสนทนา 99999999999999999999999999999999999999 88888888888888888888888888888888888 7777777777777777777777777777777777
-
-            </p>
-
-            <p style="text-align: right;background-color:#2ecc71;margin-left:50%;border:1px">
-                <img src="Content/image/show/add.png" style="border:5px blue solid;width:100%;height:100%;" align="middle" />
-
+        <div id="chatBox" #scrollMe>
+            <div *ngFor="let chatData of chatDataList">
+                <p *ngIf="chatData.messageType == 1"
+                   [ngClass]="{'textAssistant' : chatData.userType == 1 , 'textCustomer': chatData.userType == 2}">
+                    {{chatData.messageText}}
+                </p>
+                <div *ngIf="chatData.messageType == 2"
+                     [ngClass]="{'imageByAssistant_div' : chatData.userType == 1 , 'imageByCustomer_div': chatData.userType == 2}">
+                    <img src="{{chatData.messageText}}" class="imageInChatBox" />
+                </div>
+                <p [ngStyle]="{ 'text-align': (chatData.userType == 1) ?  'right': 'left' }">{{chatData.displayName}}     {{chatData.timeStamp}}</p>
                 <br />
-            </p>
-
+            </div>
         </div>
 
-
-
-
         <div id="AgentOnLine">
-            <span style="text-align: left;">
-                Agent001
-                <span style="text-align: right">
-                    &nbsp;  [EN,JP,TH]
-
-                </span>
-                <span style="text-align: right">
-                    &nbsp;  offline &nbsp;  Claim
-
-                </span>
+            <div *ngFor="let Assistant of AssistantList">
                 <input type="button" value="Transfer" />
-            </span>
-
-
-            <br />
-            <br />
-
-            <span style="text-align: left">
-                Agent002
-                <span style="text-align: right">
-                    &nbsp; [EN,JP,TH]
-
+                <span style="text-align: left;">
+                    {{Assistant.AgentName}}
                 </span>
                 <span style="text-align: right">
-                    &nbsp;  online &nbsp; Sales
-
+                    &nbsp; [{{Assistant.AgentLanguage}}]
                 </span>
-                <input type="button" value="Transfer" />
-            </span>
-
+                <span style="text-align: right">
+                    &nbsp; {{Assistant.AgentActiveStatus | AgentActiveStatus}}
+                </span>
+                <span style="text-align: right">
+                    &nbsp; {{Assistant.AgentDepartment}}
+                </span>
+                <br />
+                <br />
+            </div>
         </div>
 
 
 
         <div id="usersOnLine">
-            <span style="text-align: left;">
-                userA
-
-                <span style="text-align: right">
-                    &nbsp;&nbsp;  Waiting
+            <div *ngFor="let Customer of CustomerList">
+                <input *ngIf="Customer.CustomerActiveStatus == 1" type="button" value="GET" />
+                <input *ngIf="Customer.CustomerActiveStatus == 2" type="button" value="Finish" />
+                <input *ngIf="Customer.CustomerActiveStatus == 2" type="button" value="Switch" />
+                <span style="text-align: left;width:100%;">
+                    {{Customer.CustomerName}}
                 </span>
-                <input type="button" value="GET" />
-            </span>
-
-
-            <br />
-            <br />
-
-            <span style="text-align: left">
-                userB
-
-                <span style="text-align: right">
-                    &nbsp;&nbsp;  OnTalk (12)
+                <span style="text-align: right;width:100%;">
+                    &nbsp;&nbsp;  {{Customer.CustomerActiveStatus | CustomerActiveStatus}}
+                    <span *ngIf="Customer.CustomerUnreadMessage > 0">({{Customer.CustomerUnreadMessage}})</span>
                 </span>
-                <input type="button" value="Finish" />
-                <input type="button" value="Switch" />
-            </span>
 
-            <br />
-            <br />
+                <br />
+                <br />
+            </div>
 
-            <span style="text-align: left">
-                userC
-
-                <span style="text-align: right">
-                    &nbsp;&nbsp;  OnTalk (1)
-                </span>
-                <input type="button" value="Finish" />
-                <input type="button" value="Switch" />
-            </span>
-
-            <br />
-            <br />
-
-            <span style="text-align: left">
-                userD
-
-                <span style="text-align: right">
-                    &nbsp;&nbsp;  OnTalk (1)
-                </span>
-                <input type="button" value="Finish" />
-                <input type="button" value="Switch" />
-            </span>
 
         </div>
 
@@ -134,44 +72,34 @@
 
         <div id="messageForm">
 
-            <input id="message" type="text" ng-model="message" placeholder="message here">
+            <input id="message" type="text" [(ngModel)]="message" placeholder="message here">
 
-            <br /><br />
+            <br />
+            <br />
 
-            <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" fileread="vm.uploadme" /> &nbsp;&nbsp;
+            <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" (change)="chooseImg($event)" /> &nbsp;&nbsp;
 
-            <input id="send" type="submit" value="Send" ng-click="postTextToLineCli()">&nbsp;&nbsp;
+            <input id="send" type="submit" value="Send" (click)="postTextToLineCli()">&nbsp;&nbsp;
 
             MAX Conversation &nbsp;&nbsp;
 
-            <input type="number" step="10" min="10" max="300" ng-keydown="fixInputNumber($event)" ng-change="max1000(MAXConversation)" ng-model="MAXConversation" value="10" />&nbsp;&nbsp;
+            <input type="number" step="10" min="10" max="300" onkeydown="fixInputNumber($event)" ng-change="max1000(MAXConversation)" [(ngModel)]="MAXConversation" value="10" />&nbsp;&nbsp;
 
-            <br /><br />
-            <input id="send" type="button" value="trysendfile" ng-click="trysavefile()" />
-
-            <input id="send" type="button" ng-click="postTextToLineServ()" value="send serv" />
-        </div>
-
-        <br /><br />
-
-        <!--  --><!--  -->
-        <div ng-repeat="user in reverse(userData)">
             <br />
-            <p style="background-color:#eeeeee" ng-click="sendToTarget( user._userid ,user._userDisplayName )">   {{user._userDisplayName}}  :  {{ user._message }}</p>
-        </div>
-        <!--
+            <br />
 
-        <div style="position:fixed;padding-bottom:5%;padding-top:30%;font-size:18pt;">
-            <span> </span> &nbsp;&nbsp; To  &nbsp;&nbsp;
-            <input type="text" ng-model="toWho" placeholder="to id " ng-disabled="true" />
-            <input type="text" ng-model="toID" placeholder="to id " ng-disabled="true" ng-hide="true" />
-            &nbsp;&nbsp; message &nbsp;&nbsp;
-            <input type="text" ng-model="message" placeholder="message" size="100" />
-            <br /><br />
-            <input type="button" ng-click="postTextToLineCli()" value="send cli" />
-            <input type="button" ng-click="postTextToLineServ()" value="send serv" />
-            <input type="button" ng-click="logData()" value="Log Data" />
+            <input id="send" type="button" value="trysendfile" (click)="trysavefile()" />
+
+            <input id="send" type="button" (click)="postTextToLineServ()" value="send serv" />
         </div>
-            -->
+
+        <br />
+        <br />
+
+        <div *ngFor="let user of userData ">
+            <br />
+            <p style="background-color:#eeeeee" (click)="sendToTarget( user._userid ,user._userDisplayName )">   {{user._userDisplayName}}  :  {{ user._message }}</p>
+        </div>
+
     </div>
 </div>

@@ -25,17 +25,19 @@ var TESTauth_1 = require("../App/TESTauth");
 var _pipe = require("../App/Pipe/Global.pipe");
 // <<< ------- Route PAGE ------- >>>
 var Login_component_1 = require("../App/Login/Login.component");
+var Login_service_1 = require("../App/Login/Login.service");
 var TestPage_component_1 = require("../App/TestPage/TestPage.component");
 var PageNotFound_component_1 = require("../App/PageNotFound/PageNotFound.component");
-// <<< ------- Route PAGE ListManager------- >>>
-var AddNewORG_component_1 = require("../App/ListManager/AddNewORG/AddNewORG.component");
-// <<< ------- Route PAGE ListManager------- >>> #POPUP
-var AddNewMember_component_1 = require("../App/ListManager/AddNewORG/AddNewMember/AddNewMember.component");
-var AddOldMember_component_1 = require("../App/ListManager/AddNewORG/AddOldMember/AddOldMember.component");
-// <<< ------- Route PAGE ListManager------- >>> #Service
-var AddNewORG_service_1 = require("../App/ListManager/AddNewORG/AddNewORG.service");
+// <<< ------- Route PAGE Assistant ------- >>>
+var Assistant_component_1 = require("../App/Assistant/Assistant.component");
+var Assistant_service_1 = require("../App/Assistant/Assistant.service");
+// <<< ------- Route PAGE Management ------- >>>
+var Management_component_1 = require("../App/Management/Management.component");
+var Management_service_1 = require("../App/Management/Management.service");
 var APP_PROVIDERS = [
-    AddNewORG_service_1.AddNewORGService
+    Login_service_1.LoginService,
+    Assistant_service_1.AssistantService,
+    Management_service_1.ManagementService
 ];
 var AUTH_PROVIDERS = {
     provide: TESTauth_1.authInterceptorService,
@@ -68,15 +70,15 @@ AppModule = __decorate([
             // <<< ------- # Pipe # ------- >>>
             _pipe.GroupByPipe,
             _pipe.ReversePipe,
+            _pipe.ColorStatusOnlinePipe,
+            _pipe.CustomerActiveStatusPipe,
+            _pipe.AgentActiveStatusPipe,
             // <<< ------- Route PAGE ------- >>>
             Login_component_1.LoginComponent,
             TestPage_component_1.TestPageComponent,
             PageNotFound_component_1.PageNotFoundComponent,
-            // <<< ------- Route PAGE ListManager------- >>>
-            AddNewORG_component_1.AddNewORGComponent,
-            // <<< ------- Route PAGE ListManager------- >>> popup
-            AddNewMember_component_1.AddNewMemberComponent,
-            AddOldMember_component_1.AddOldMemberComponent,
+            Assistant_component_1.AssistantComponent,
+            Management_component_1.ManagementComponent
         ],
         bootstrap: [
             app_component_1.AppComponent

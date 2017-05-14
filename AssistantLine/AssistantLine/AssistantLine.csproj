@@ -260,6 +260,8 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\image\show\add.png" />
+    <Content Include="Content\image\show\delete.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -300,6 +302,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="styles.css" />
+    <Content Include="styles\Assistant\Assistant.css" />
     <Content Include="styles\bootstrap.min.css" />
     <Content Include="styles\bootstrap.min.js" />
     <Content Include="styles\css\styles.css" />
@@ -360,9 +363,11 @@
     <TypeScriptCompile Include="App\Assistant\Assistant.component.ts" />
     <TypeScriptCompile Include="App\Assistant\Assistant.service.ts" />
     <TypeScriptCompile Include="App\Login\Login.component.ts" />
+    <TypeScriptCompile Include="App\Login\Login.service.ts" />
     <TypeScriptCompile Include="App\main.ts" />
     <TypeScriptCompile Include="App\Management\Management.component.ts" />
     <TypeScriptCompile Include="App\Management\Management.service.ts" />
+    <TypeScriptCompile Include="App\OtherService\UploadFile.service.ts" />
     <TypeScriptCompile Include="App\PageNotFound\PageNotFound.component.ts" />
     <TypeScriptCompile Include="App\Pipe\Global.pipe.ts" />
     <TypeScriptCompile Include="App\TESTauth.ts" />
