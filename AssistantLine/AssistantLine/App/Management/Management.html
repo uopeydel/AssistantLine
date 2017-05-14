@@ -1,0 +1,59 @@
+﻿<div ng-controller="CustomController">
+    <br /> <br /><br /><br />
+    <div style="padding-left:1%;padding-top:1%;background-color:azure;width:100%;display:list-item;">
+
+        <div style="position: relative;padding-left:1%;margin-left:1%;margin-top:1%;background-color:#eeeeee;width:20%;height:70%;display: inline-block; " ng-repeat="helpdesk in helpDeskList">
+            <input style="position: absolute;top:0;right:0;" type="image" src="Content/image/show/add.png" height="42" width="42" ng-click="addNewHelpDesk($index+1)" ng-if="$last" />
+            <span>HelpDeskUserId _ {{helpdesk._id}}</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserId" ng-readonly="true" />
+            <br /><br />
+
+            <span>HelpDeskUserPass</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserPass" />
+            <br /><br />
+
+            <span>HelpDeskUserRealName</span>  <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserRealName" />
+            <br /><br />
+
+            <span>HelpDeskUserRole</span>  <br />
+            <br />
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserRole.Create" ng-disabled="$first" /> Create
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserRole.Edit" ng-disabled="$first" /> Edit
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserRole.Delete" ng-disabled="$first" /> Delete
+            <br /><br />
+
+            <span>HelpDeskUserStatusOnline</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserStatusOnline" ng-disabled="true" style="background-color:{{helpdesk.HelpDeskUserStatusOnline | colorStatusOnline }}" />
+            <br /><br />
+
+            <span>HelpDeskUserLineName</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserLineName" ng-disabled="true" />
+            <br /><br />
+
+            <span>HelpDeskUserLineId</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserLineId" ng-disabled="true" />
+            <br /><br />
+
+            <span>HelpDeskUserLineAuth</span> <br />
+            <input type="text" ng-model="helpdesk.HelpDeskUserLineAuth" ng-readonly="true" />
+            <input type="button" value="new gen" ng-click="newGenAuth($index)" />
+            <br /><br />
+
+            <span>HelpDeskUserLineLang</span> <br />
+            <br />
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserLineLang.EN" /> EN
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserLineLang.TH" /> TH
+            <input type="checkbox" ng-model="helpdesk.HelpDeskUserLineLang.JP" /> JP
+            <br /><br />
+
+
+        </div>
+
+        <input type="image" src="Content/image/show/delete.png" height="42" width="42" ng-click="deleteHelpDesk()" />
+
+
+    </div>
+
+
+</div>

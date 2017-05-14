@@ -1,10 +1,177 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿<div ng-controller="HelpDeskController">
 
-</body>
-</html>
+    <div style="padding-left:50px;">
+        <br /><br /><br />
+        <br />
+        <!--  -->
+        <!--   <div style="width:60%;height:60%;background-color:#F2F4F4"></div>-->
+        <!--  -->
+
+        <h1> {{helpdeskData.HelpDeskUserId}} </h1>
+
+
+
+        <div id="chatBox">
+
+            <p style="text-align: left;background-color:#85c1e9;width:50%;border:1px solid black">
+                <img src="Content/image/show/add.png" style="border:5px blue solid;width:100%;height:100%;" align="middle" />
+            <p>user 001    10:59:59</p>
+            <br />
+            </p>
+
+            <p style="text-align: left;background-color:#85c1e9; width:50%;border:1px;word-break: break-all;">
+                Message ทดสอบ บทสนทนา 99999999999999999999999999999999999999 88888888888888888888888888888888888 7777777777777777777777777777777777
+            <p>user 001    12:59:59</p>
+            </p>
+
+
+            <p style="text-align: right;background-color:#2ecc71;margin-left:50%;border:1px;word-break: break-all;">
+                right 03   Message ทดสอบ บทสนทนา 99999999999999999999999999999999999999 88888888888888888888888888888888888 7777777777777777777777777777777777
+
+            </p>
+
+            <p style="text-align: right;background-color:#2ecc71;margin-left:50%;border:1px">
+                <img src="Content/image/show/add.png" style="border:5px blue solid;width:100%;height:100%;" align="middle" />
+
+                <br />
+            </p>
+
+        </div>
+
+
+
+
+        <div id="AgentOnLine">
+            <span style="text-align: left;">
+                Agent001
+                <span style="text-align: right">
+                    &nbsp;  [EN,JP,TH]
+
+                </span>
+                <span style="text-align: right">
+                    &nbsp;  offline &nbsp;  Claim
+
+                </span>
+                <input type="button" value="Transfer" />
+            </span>
+
+
+            <br />
+            <br />
+
+            <span style="text-align: left">
+                Agent002
+                <span style="text-align: right">
+                    &nbsp; [EN,JP,TH]
+
+                </span>
+                <span style="text-align: right">
+                    &nbsp;  online &nbsp; Sales
+
+                </span>
+                <input type="button" value="Transfer" />
+            </span>
+
+        </div>
+
+
+
+        <div id="usersOnLine">
+            <span style="text-align: left;">
+                userA
+
+                <span style="text-align: right">
+                    &nbsp;&nbsp;  Waiting
+                </span>
+                <input type="button" value="GET" />
+            </span>
+
+
+            <br />
+            <br />
+
+            <span style="text-align: left">
+                userB
+
+                <span style="text-align: right">
+                    &nbsp;&nbsp;  OnTalk (12)
+                </span>
+                <input type="button" value="Finish" />
+                <input type="button" value="Switch" />
+            </span>
+
+            <br />
+            <br />
+
+            <span style="text-align: left">
+                userC
+
+                <span style="text-align: right">
+                    &nbsp;&nbsp;  OnTalk (1)
+                </span>
+                <input type="button" value="Finish" />
+                <input type="button" value="Switch" />
+            </span>
+
+            <br />
+            <br />
+
+            <span style="text-align: left">
+                userD
+
+                <span style="text-align: right">
+                    &nbsp;&nbsp;  OnTalk (1)
+                </span>
+                <input type="button" value="Finish" />
+                <input type="button" value="Switch" />
+            </span>
+
+        </div>
+
+
+
+        <br /><br />
+
+        <div id="messageForm">
+
+            <input id="message" type="text" ng-model="message" placeholder="message here">
+
+            <br /><br />
+
+            <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" fileread="vm.uploadme" /> &nbsp;&nbsp;
+
+            <input id="send" type="submit" value="Send" ng-click="postTextToLineCli()">&nbsp;&nbsp;
+
+            MAX Conversation &nbsp;&nbsp;
+
+            <input type="number" step="10" min="10" max="300" ng-keydown="fixInputNumber($event)" ng-change="max1000(MAXConversation)" ng-model="MAXConversation" value="10" />&nbsp;&nbsp;
+
+            <br /><br />
+            <input id="send" type="button" value="trysendfile" ng-click="trysavefile()" />
+
+            <input id="send" type="button" ng-click="postTextToLineServ()" value="send serv" />
+        </div>
+
+        <br /><br />
+
+        <!--  --><!--  -->
+        <div ng-repeat="user in reverse(userData)">
+            <br />
+            <p style="background-color:#eeeeee" ng-click="sendToTarget( user._userid ,user._userDisplayName )">   {{user._userDisplayName}}  :  {{ user._message }}</p>
+        </div>
+        <!--
+
+        <div style="position:fixed;padding-bottom:5%;padding-top:30%;font-size:18pt;">
+            <span> </span> &nbsp;&nbsp; To  &nbsp;&nbsp;
+            <input type="text" ng-model="toWho" placeholder="to id " ng-disabled="true" />
+            <input type="text" ng-model="toID" placeholder="to id " ng-disabled="true" ng-hide="true" />
+            &nbsp;&nbsp; message &nbsp;&nbsp;
+            <input type="text" ng-model="message" placeholder="message" size="100" />
+            <br /><br />
+            <input type="button" ng-click="postTextToLineCli()" value="send cli" />
+            <input type="button" ng-click="postTextToLineServ()" value="send serv" />
+            <input type="button" ng-click="logData()" value="Log Data" />
+        </div>
+            -->
+    </div>
+</div>

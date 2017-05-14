@@ -28,18 +28,6 @@ import { LoginComponent } from '../App/Login/Login.component';
 import { TestPageComponent } from '../App/TestPage/TestPage.component';
 import { PageNotFoundComponent } from '../App/PageNotFound/PageNotFound.component';
 
-// <<< ------- Route PAGE ListManager------- >>>
-import { AddNewORGComponent } from '../App/ListManager/AddNewORG/AddNewORG.component';
-
-
-// <<< ------- Route PAGE ListManager------- >>> #POPUP
-import { AddNewMemberComponent } from '../App/ListManager/AddNewORG/AddNewMember/AddNewMember.component';
-import { AddOldMemberComponent } from '../App/ListManager/AddNewORG/AddOldMember/AddOldMember.component';
-
-
-// <<< ------- Route PAGE ListManager------- >>> #Service
-import { AddNewORGService } from '../App/ListManager/AddNewORG/AddNewORG.service';
-
 
 const APP_PROVIDERS = [
     AddNewORGService
@@ -76,14 +64,6 @@ const AUTH_PROVIDERS = {
         LoginComponent,
         TestPageComponent,
         PageNotFoundComponent,
-
-        // <<< ------- Route PAGE ListManager------- >>>
-        AddNewORGComponent,
-     
-
-        // <<< ------- Route PAGE ListManager------- >>> popup
-        AddNewMemberComponent,
-        AddOldMemberComponent,
        
     ],
     bootstrap: [
