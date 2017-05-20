@@ -69,21 +69,70 @@
         <br />
 
         <div id="messageForm">
-            <input id="message" type="text" [(ngModel)]="message" placeholder="message here">
+            <md-tab-group>
+                <md-tab label="Message">
+                    <div>
 
-            <br />
-            <br />
+                        <input id="message" type="text" [(ngModel)]="message" placeholder="message here" [attr.maxLength]="2000">
 
-            <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" (change)="chooseImg($event)" /> &nbsp;&nbsp;
-            <input id="send" type="submit" value="Send" (click)="postJsonData()">&nbsp;&nbsp;
-
-            <!--<input id="send" type="submit" value="Send" (click)="postTextToLineCli()">&nbsp;&nbsp;-->
+                        <br />
+                        <br />
+                        <button md-raised-button (click)="postJsonData()">Send <md-icon>send</md-icon></button>
 
 
-            <!--
-            <input id="send" type="button" value="trysendfile" (click)="trysavefile()" />
-            <input id="send" type="button" (click)="postTextToLineServ()" value="send serv" />
-                -->
+                    </div>
+                </md-tab>
+                <md-tab label="File">
+                    <div>
+
+                        <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" (change)="chooseImg($event)" /> &nbsp;&nbsp;
+                        <!--<input id="send" type="submit" value="Send" (click)="postJsonData()">&nbsp;&nbsp;-->
+                        <!--<input id="send" type="submit" value="Send" (click)="postTextToLineCli()">&nbsp;&nbsp;-->
+                        <!--
+                        <input id="send" type="button" value="trysendfile" (click)="trysavefile()" />
+                        <input id="send" type="button" (click)="postTextToLineServ()" value="send serv" />
+                            -->
+
+                    </div>
+                </md-tab>
+                <md-tab label="location">
+                    <div>
+ 
+
+                    </div>
+                </md-tab>
+                <md-tab label="sticker">
+                    <div>
+
+
+                    </div>
+                </md-tab>
+                <md-tab label="imagemap">
+                    <div>
+
+
+                    </div>
+                </md-tab>
+                <md-tab label="template">
+                    <div>
+
+
+                    </div>
+                </md-tab>
+                <md-tab label="carouseltemplate">
+                    <div>
+
+
+                    </div>
+                </md-tab>
+                <md-tab label="confirmtemplate">
+                    <div>
+
+
+                    </div>
+                </md-tab>
+            </md-tab-group>
+
         </div>
 
         <div id="optionForm">

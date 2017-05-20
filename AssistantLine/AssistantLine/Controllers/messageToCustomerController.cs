@@ -29,7 +29,7 @@ namespace AssistantLine
                 var srv = (ILineService)appContext.GetObject("lineSrv");
 
                 var request = Request.Content.ReadAsStringAsync().Result;
-                return Ok("[xxx]  " + srv.getTest("  [yy xx12 => test]  "));
+                return Ok(IdLineAt +NameLineAt+ srv.getTest(" [=> test] "));
             }
             catch (Exception e)
             {

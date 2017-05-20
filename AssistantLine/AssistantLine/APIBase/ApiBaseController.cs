@@ -1,6 +1,7 @@
 ﻿using Spring.Context;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,6 +13,10 @@ namespace AssistantLine.APIBase
     public class ApiBaseController : ApiController
     {
         protected IApplicationContext appContext;
+        protected string ChannelAccessToken = ConfigurationSettings.AppSettings["ChannelAccessToken"].ToString();
+        protected string NameLineAt = ConfigurationSettings.AppSettings["NameLineAt"].ToString();
+        protected string IdLineAt = ConfigurationSettings.AppSettings["IdLineAt"].ToString();
+        protected string userId = ConfigurationSettings.AppSettings["userId"].ToString();
 
         protected void savelog(string textData)
         {
