@@ -1,0 +1,7 @@
+AssistantLine/AssistantLine/Properties/PublishProfiles/Default Settings.pubxml
+AssistantLine/AssistantLine/obj/Release/**
+AssistantLine/AssistantLine/obj/Debug/**
+AssistantLine/AssistantLine/app/**/**/*.js
+AssistantLine/AssistantLine/app/**/**/*.map
+AssistantLine/AssistantLine/obj/**
+sh.exe.stackdump
