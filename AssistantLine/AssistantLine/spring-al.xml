@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<objects xmlns="http://www.springframework.net">
+  <!--=====================================All DAO===========================โปรดเรียงลำดับตัวอักษร================-->
+
+
+  <!--=====================================All Service===========================โปรดเรียงลำดับตัวอักษร================-->
+  <!-- #####################################################################  Line  ##################################################################### -->
+  <object id="lineSrv" type="Service.Line.ServiceImpl.LineServiceImpl, Service.Line">
+    <!-- <property name="departmentKjDAO" ref="idepartmentDAO"/> -->
+
+  </object>
+
+
+
+
+
+</objects>

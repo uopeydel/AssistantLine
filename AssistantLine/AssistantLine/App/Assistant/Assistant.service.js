@@ -32,7 +32,8 @@ var AssistantService = (function () {
         var headers = new http_1.Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         var options = new http_1.RequestOptions({ headers: headers });
         var objJson = JSON.stringify(obj);
-        var apiroot = 'messageToCustomer';
+        var apiroot = 'messageLineToCustomer';
+        //let apiroot = 'api/values/5';
         return this.http.post(apiroot, objJson, options).map(function (res) { return res.json(); });
     };
     return AssistantService;

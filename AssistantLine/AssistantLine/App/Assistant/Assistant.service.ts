@@ -28,7 +28,8 @@ export class AssistantService {
         let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
         let options = new RequestOptions({ headers: headers });
         let objJson: string = JSON.stringify(obj);
-        let apiroot =  'messageToCustomer';
+        let apiroot =  'messageLineToCustomer';
+        //let apiroot = 'api/values/5';
         return this.http.post(apiroot, objJson, options).map(res => res.json());
 
     }

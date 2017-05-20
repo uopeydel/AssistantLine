@@ -210,6 +210,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="APIBase\ApiBaseController.cs" />
     <Compile Include="Controllers\messageToCustomerController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -311,6 +312,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="spring-al.xml" />
     <Content Include="styles.css" />
     <Content Include="styles\Assistant\Assistant.css" />
     <Content Include="styles\bootstrap.min.css" />
@@ -385,6 +387,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Service.Line\Service.Line.csproj">
+      <Project>{5dd23327-e738-4bcf-91b4-fbd13be33725}</Project>
+      <Name>Service.Line</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

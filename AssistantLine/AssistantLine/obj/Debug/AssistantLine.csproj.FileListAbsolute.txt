@@ -178,3 +178,14 @@ D:\AssistantLine\AssistantLine\AssistantLine\bin\System.Web.Http.Owin.xml
 D:\AssistantLine\AssistantLine\AssistantLine\obj\Debug\AssistantLine.csprojResolveAssemblyReference.cache
 D:\AssistantLine\AssistantLine\AssistantLine\obj\Debug\AssistantLine.dll
 D:\AssistantLine\AssistantLine\AssistantLine\obj\Debug\AssistantLine.pdb
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.Core.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Service.Line.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Spring.Core.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Service.Line.pdb
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.pdb
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.Core.pdb
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.Core.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Spring.Core.pdb
+D:\AssistantLine\AssistantLine\AssistantLine\bin\Spring.Core.xml
