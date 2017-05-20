@@ -4,3 +4,4 @@ AssistantLine/AssistantLine/app/**/**/*.js
 AssistantLine/AssistantLine/app/**/**/*.map
 AssistantLine/AssistantLine/obj/**
 sh.exe.stackdump
+AssistantLine/AssistantLine/connection.xml

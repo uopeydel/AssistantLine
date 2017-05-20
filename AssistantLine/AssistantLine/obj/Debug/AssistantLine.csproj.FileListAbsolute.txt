@@ -189,3 +189,10 @@ D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.Core.pdb
 D:\AssistantLine\AssistantLine\AssistantLine\bin\Common.Logging.Core.xml
 D:\AssistantLine\AssistantLine\AssistantLine\bin\Spring.Core.pdb
 D:\AssistantLine\AssistantLine\AssistantLine\bin\Spring.Core.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Bson.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.Core.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Bson.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.Core.xml

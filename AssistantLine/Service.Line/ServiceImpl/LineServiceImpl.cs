@@ -21,16 +21,9 @@ namespace Service.Line.ServiceImpl
         //public IOrganizationDAO organizationKjDAO;
         //public IProjectDAO projectKjDAO;
         //public IStakeholderDAO stakeholderKjDAO;
-        public string getTest(string dataTest)
-        {
-            //var ChannelAccessToken = ConfigurationSettings.AppSettings["ChannelAccessToken"].ToString();
-            //ChannelAccessToken += "end";
-            //return "ChannelAccessToken " + ChannelAccessToken + "  ## x ##  "
-            //    + departmentKjDAO.testDAO(" s01 ")  
-            //    + organizationKjDAO.testDAO(" s02 ") 
-            //    + projectKjDAO.testDAO(" s03 ") 
-            //    + stakeholderKjDAO.testDAO(" s04 ");
-            return dataTest + " => xx";
+        public string getTest(string dataTest, string path)
+        { 
+            return dataTest + "=>x"+ path;
         }
 
         public byte[] GetUserUploadedContent(string ContentID, string ChannelAccessToken)

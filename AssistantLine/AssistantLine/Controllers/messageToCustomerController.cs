@@ -23,17 +23,19 @@ namespace AssistantLine
         {
             try
             {
+                
                 //var srv = (IDocumentService)appContext.GetObject("DocumentSrv");
                 //var request = Request.Content.ReadAsStringAsync().Result;
                 //return Ok(srv.GetDocumentListGroupByUnit(request));
                 var srv = (ILineService)appContext.GetObject("lineSrv");
 
                 var request = Request.Content.ReadAsStringAsync().Result;
-                return Ok(IdLineAt +NameLineAt+ srv.getTest(" [=> test] "));
+                return Ok(srv.getTest("[=>]", TakeConnection().ChannelAccessToken) );
             }
-            catch (Exception e)
+            catch (WebException ex)
             {
-                throw new Exception("error", e);
+                using (System.IO.StreamReader streamReader = new System.IO.StreamReader(ex.Response.GetResponseStream()))
+                    throw new Exception("messageLineToCustomer" + streamReader.ReadToEnd(), (Exception)ex);
             }
         }
 

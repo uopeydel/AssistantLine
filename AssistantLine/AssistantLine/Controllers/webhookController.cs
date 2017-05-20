@@ -34,19 +34,19 @@ namespace AssistantLine.Controllers
                 string replyToken = ReceivedMessage.events[0].replyToken;
                 long timestamp = ReceivedMessage.events[0].timestamp;
                 string contentId = ReceivedMessage.events[0].message.id;
-                var userInfo = lineSrv.GetUserInfo(userId, ChannelAccessToken);
+                var userInfo = lineSrv.GetUserInfo(userId, TakeConnection().ChannelAccessToken);
 
                 if (ReceivedMessage.events[0].type == "postback")
                 {
-                    lineSrv.ReplyMessage(replyToken, " ex postback " + ReceivedMessage.events[0].postback.data, ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, " ex postback " + ReceivedMessage.events[0].postback.data, TakeConnection().ChannelAccessToken);
                 }
                 else if (ReceivedMessage.events[0].message.type == "text")
                 { 
-                    lineSrv.ReplyMessage(replyToken, ReceivedMessage.events[0].source.userId + " [text] " + ReceivedMessage.events[0].message.text, ChannelAccessToken); 
+                    lineSrv.ReplyMessage(replyToken, ReceivedMessage.events[0].source.userId + " [text] " + ReceivedMessage.events[0].message.text, TakeConnection().ChannelAccessToken); 
                 }
                 else if (ReceivedMessage.events[0].type == "follow")
                 { 
-                    lineSrv.ReplyMessage(replyToken, "Thank For Follow Me :)", ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, "Thank For Follow Me :)", TakeConnection().ChannelAccessToken);
                 }
                 else if (ReceivedMessage.events[0].type == "unfollow")
                 {
@@ -54,7 +54,7 @@ namespace AssistantLine.Controllers
                 }
                 else if (ReceivedMessage.events[0].type == "join")
                 {
-                    lineSrv.ReplyMessage(replyToken, "ขออภัย ระบบเรายังไม่รองรับการสนทนาแบบกลุ่ม", ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, "ขออภัย ระบบเรายังไม่รองรับการสนทนาแบบกลุ่ม", TakeConnection().ChannelAccessToken);
                 }
                 else if (ReceivedMessage.events[0].message.type == "image")
                 {
@@ -84,7 +84,7 @@ namespace AssistantLine.Controllers
                 }
                 else if (ReceivedMessage.events[0].message.type == "sticker")
                 {
-                    lineSrv.ReplyMessage(replyToken, " [] " + ReceivedMessage.events[0].message.packageId + " s " + ReceivedMessage.events[0].message.stickerId, ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, " [] " + ReceivedMessage.events[0].message.packageId + " s " + ReceivedMessage.events[0].message.stickerId, TakeConnection().ChannelAccessToken);
                 }
                 else
                 {

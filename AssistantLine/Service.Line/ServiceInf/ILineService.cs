@@ -10,7 +10,7 @@ namespace Service.Line.ServiceInf
 {
     public interface ILineService
     {
-        string getTest(string dataTest);
+        string getTest(string dataTest ,string path);
         byte[] GetUserUploadedContent(string ContentID, string ChannelAccessToken);
         ReceievedMessage ParsingToReceievedMessage(string RawData);
         LineUserInfoModel GetUserInfo(string uid, string ChannelAccessToken);
