@@ -21,6 +21,7 @@ var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
 var app_routes_1 = require("../App/app.routes");
 var TESTauth_1 = require("../App/TESTauth");
+var UploadFile_service_1 = require("../App/OtherService/UploadFile.service");
 // <<< ------- # Pipe # ------- >>>
 var _pipe = require("../App/Pipe/Global.pipe");
 // <<< ------- Route PAGE ------- >>>
@@ -37,7 +38,8 @@ var Management_service_1 = require("../App/Management/Management.service");
 var APP_PROVIDERS = [
     Login_service_1.LoginService,
     Assistant_service_1.AssistantService,
-    Management_service_1.ManagementService
+    Management_service_1.ManagementService,
+    UploadFile_service_1.UploadFileService
 ];
 var AUTH_PROVIDERS = {
     provide: TESTauth_1.authInterceptorService,

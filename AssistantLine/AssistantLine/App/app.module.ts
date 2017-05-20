@@ -46,7 +46,9 @@ import { ManagementService } from '../App/Management/Management.service';
 const APP_PROVIDERS = [
     LoginService,
     AssistantService,
-    ManagementService
+    ManagementService,
+
+    UploadFileService
 ];
 
 const AUTH_PROVIDERS = {

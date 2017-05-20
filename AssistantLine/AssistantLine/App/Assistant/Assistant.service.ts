@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-//import { Headers, RequestOptions } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 //import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
@@ -18,10 +18,19 @@ export class AssistantService {
         private activatedRoute: ActivatedRoute,
         //private _cookieService: CookieService,
         private router: Router,
-        private snackBar: MdSnackBar
+        private snackBar: MdSnackBar,
+        private http: Http
     ) {
        
     }
 
+    public postMessageJsonObj(obj : any) {
+        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
+        let options = new RequestOptions({ headers: headers });
+        let objJson: string = JSON.stringify(obj);
+        let apiroot =  'messageToCustomer';
+        return this.http.post(apiroot, objJson, options).map(res => res.json());
+
+    }
 
 }

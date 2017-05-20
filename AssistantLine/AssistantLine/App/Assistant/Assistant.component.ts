@@ -71,6 +71,36 @@ export class AssistantComponent implements OnInit, AfterViewChecked  {
         reader.readAsDataURL(event.target.files[0]);
     }
 
+    postJsonData() {
+        let jsonPOST = {
+            events: [
+                {
+                    replyToken: "nHuyWiB7yP5Zw52FIkcQobQuGDXCTA",
+                    type: "message",
+                    timestamp: 1462629479859,
+                    source: {
+                        type: "user",
+                        userId: this.AgentSelected.AgentId
+                    },
+                    message: {
+                        id: "325708",
+                        type: "text",
+                        text: this.CustomerSelected.Customer_UID + '*' + this.message
+                    }
+                }
+            ]
+        }
+        this.assistantService.postMessageJsonObj(jsonPOST)
+            .subscribe(data => {
+                console.log(data);
+            }, error => {
+                console.log(error);
+            });
+
+    }
+
+
+
     fileToSave : any = undefined;
     trysavefile () { 
         if (_.isUndefined(this.fileToSave)) {
@@ -445,7 +475,7 @@ export class AssistantComponent implements OnInit, AfterViewChecked  {
                 ]
             }
         }
-
+        
         //jsonPOST.events[0].message = this.message;
         //- post
         //$http({

@@ -11,25 +11,14 @@ background-color:#EBEDEF;
 	 
 	color:black;
 	border: 1px teal solid;
-	height: 500px;
+	height: 600px;
 	width: 50%;
 	overflow-y: scroll;
 	float:left; 
-    max-height: 500px; 
+    max-height: 600px; 
 
 }
-#usersOnLine{
-    background-color:lightgray;
-	font-family:tahoma;
-	 
-	color:black;
-	border:1px teal solid;
-	width:20%;
-	height:500px;
-	overflow-y:scroll;
-	margin-left:1px;
-    
-}
+
 
 #AgentOnLine{
     background-color:lightgray;
@@ -38,18 +27,45 @@ background-color:#EBEDEF;
 	color:black;
 	border:1px teal solid;
 	width:25%;
-	height:500px;
+	height:600px;
 	overflow-y:scroll;
 	margin-left:1px;
     float:left; 
      
 }
+
+#usersOnLine {
+    background-color: lightgray;
+    font-family: tahoma;
+    color: black;
+    border: 1px teal solid;
+    width: 20%;
+    height: 600px;
+    overflow-y: scroll;
+    margin-left: 1px;
+}
+
+#messageForm {
+    width: 70%;
+    border: 1px teal solid;
+    border-color: black;
+    float: left;
+}
+
+#optionForm {
+    margin-left:10px;
+    width: 20%;
+    border: 1px teal solid;
+    border-color: black;
+    float: left;
+}
+
 #message {
-	width: 60%;
-	height: 40px;
-	border: 1px teal solid;
-	float:left;
-	margin-top:1px;
+    width: 60%;
+    height: 40px;
+    border: 1px teal solid;
+    float: left;
+    margin-top: 1px;
 }
 #send {
 	width: 20%;

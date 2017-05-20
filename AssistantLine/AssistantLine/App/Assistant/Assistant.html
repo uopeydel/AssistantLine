@@ -66,39 +66,43 @@
 
         </div>
 
-
-
-        <br /><br />
+        <br />
 
         <div id="messageForm">
-
             <input id="message" type="text" [(ngModel)]="message" placeholder="message here">
 
             <br />
             <br />
 
             <input id="send" type="file" accept=".png,.jpg,.mp4,.m4a" (change)="chooseImg($event)" /> &nbsp;&nbsp;
+            <input id="send" type="submit" value="Send" (click)="postJsonData()">&nbsp;&nbsp;
 
-            <input id="send" type="submit" value="Send" (click)="postTextToLineCli()">&nbsp;&nbsp;
+            <!--<input id="send" type="submit" value="Send" (click)="postTextToLineCli()">&nbsp;&nbsp;-->
 
-            MAX Conversation &nbsp;&nbsp;
 
-            <input type="number" step="10" min="10" max="300" onkeydown="fixInputNumber($event)" ng-change="max1000(MAXConversation)" [(ngModel)]="MAXConversation" value="10" />&nbsp;&nbsp;
-
-            <br />
-            <br />
-
+            <!--
             <input id="send" type="button" value="trysendfile" (click)="trysavefile()" />
-
             <input id="send" type="button" (click)="postTextToLineServ()" value="send serv" />
+                -->
         </div>
 
+        <div id="optionForm">
+            MAX Conversation &nbsp;&nbsp;
+
+            <input type="number" step="10" min="10" max="300" onkeydown="return false"
+                   [(ngModel)]="MAXConversation" value="10" />&nbsp;&nbsp;
+
+            <br />
+            <br />
+        </div>
         <br />
         <br />
 
         <div *ngFor="let user of userData ">
             <br />
-            <p style="background-color:#eeeeee" (click)="sendToTarget( user._userid ,user._userDisplayName )">   {{user._userDisplayName}}  :  {{ user._message }}</p>
+            <p style="background-color:#eeeeee" (click)="sendToTarget( user._userid ,user._userDisplayName )">
+                {{user._userDisplayName}}  :  {{ user._message }}
+            </p>
         </div>
 
     </div>
