@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssistantLine", "AssistantL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.Line", "Service.Line\Service.Line.csproj", "{5DD23327-E738-4BCF-91B4-FBD13BE33725}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{2AB51F26-6DEF-4C81-AD2E-DD493E2423BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5DD23327-E738-4BCF-91B4-FBD13BE33725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DD23327-E738-4BCF-91B4-FBD13BE33725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DD23327-E738-4BCF-91B4-FBD13BE33725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AB51F26-6DEF-4C81-AD2E-DD493E2423BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AB51F26-6DEF-4C81-AD2E-DD493E2423BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AB51F26-6DEF-4C81-AD2E-DD493E2423BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AB51F26-6DEF-4C81-AD2E-DD493E2423BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

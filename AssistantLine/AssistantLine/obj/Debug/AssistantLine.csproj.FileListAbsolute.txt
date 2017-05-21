@@ -196,3 +196,5 @@ D:\AssistantLine\AssistantLine\AssistantLine\bin\System.Runtime.InteropServices.
 D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Bson.xml
 D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.xml
 D:\AssistantLine\AssistantLine\AssistantLine\bin\MongoDB.Driver.Core.xml
+D:\AssistantLine\AssistantLine\AssistantLine\bin\DAL.dll
+D:\AssistantLine\AssistantLine\AssistantLine\bin\DAL.pdb

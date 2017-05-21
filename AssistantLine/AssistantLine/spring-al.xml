@@ -2,12 +2,14 @@
 
 <objects xmlns="http://www.springframework.net">
   <!--=====================================All DAO===========================โปรดเรียงลำดับตัวอักษร================-->
-
+  <object id="ilogServiceDAO" type="DAL.DAOImpl.LogServiceImpl, DAL" />
+  <object id="iconnectionServiceDAO" type="DAL.DAOImpl.ConnectionServiceImpl, DAL" />
 
   <!--=====================================All Service===========================โปรดเรียงลำดับตัวอักษร================-->
   <!-- #####################################################################  Line  ##################################################################### -->
   <object id="lineSrv" type="Service.Line.ServiceImpl.LineServiceImpl, Service.Line">
-    <!-- <property name="departmentKjDAO" ref="idepartmentDAO"/> -->
+    <property name="logDAO" ref="ilogServiceDAO"/>
+    <property name="connectDAO" ref="iconnectionServiceDAO"/>
 
   </object>
 

@@ -5,3 +5,12 @@ D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\Newtonsoft.Json.xml
 D:\AssistantLine\AssistantLine\Service.Line\obj\Debug\Service.Line.dll
 D:\AssistantLine\AssistantLine\Service.Line\obj\Debug\Service.Line.pdb
 D:\AssistantLine\AssistantLine\Service.Line\obj\Debug\Service.Line.csprojResolveAssemblyReference.cache
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\DAL.dll
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\DAL.pdb
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Driver.dll
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Driver.Core.dll
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Bson.dll
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Driver.xml
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Driver.Core.xml
+D:\AssistantLine\AssistantLine\Service.Line\bin\Debug\MongoDB.Bson.xml

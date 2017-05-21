@@ -11,13 +11,13 @@ namespace Service.Line.ServiceInf
     public interface ILineService
     {
         string getTest(string dataTest ,string path);
-        byte[] GetUserUploadedContent(string ContentID, string ChannelAccessToken);
+        byte[] GetUserUploadedContent(string ContentID);
         ReceievedMessage ParsingToReceievedMessage(string RawData);
-        LineUserInfoModel GetUserInfo(string uid, string ChannelAccessToken);
-        string PushMessage(string ToUserID, string Message, string ChannelAccessToken);
-        string PushDynamicMessage( string Message, string ChannelAccessToken);
-        string ReplyMessage(string ReplyToken, string Message, string ChannelAccessToken);
-        string ReplyMessage(string JasonData, string ChannelAccessToken);
+        LineUserInfoModel GetUserInfo(string uid);
+        string PushMessage(string ToUserID, string Message);
+        string PushDynamicMessage( string Message);
+        string ReplyMessage(string ReplyToken, string Message);
+        string ReplyMessage(string JasonData);
         dynamic DeclareDynamicAreasModel(AreaModel areas);
         dynamic DeclareDynamicActionsModel(ActionModel actions);
         dynamic DeclareDynamicColumnModel(ActionModel[] actions, string thumbnailImageUrl, string title, string text);

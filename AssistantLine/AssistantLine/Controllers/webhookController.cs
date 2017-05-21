@@ -26,7 +26,7 @@ namespace AssistantLine.Controllers
             try
             {
                 string postData = Request.Content.ReadAsStringAsync().Result;
-                
+
                 var lineSrv = (ILineService)appContext.GetObject("lineSrv");
                 var ReceivedMessage = lineSrv.ParsingToReceievedMessage(postData);
 
@@ -34,27 +34,27 @@ namespace AssistantLine.Controllers
                 string replyToken = ReceivedMessage.events[0].replyToken;
                 long timestamp = ReceivedMessage.events[0].timestamp;
                 string contentId = ReceivedMessage.events[0].message.id;
-                var userInfo = lineSrv.GetUserInfo(userId, TakeConnection().ChannelAccessToken);
+                var userInfo = lineSrv.GetUserInfo(userId);
 
                 if (ReceivedMessage.events[0].type == "postback")
                 {
-                    lineSrv.ReplyMessage(replyToken, " ex postback " + ReceivedMessage.events[0].postback.data, TakeConnection().ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, " ex postback " + ReceivedMessage.events[0].postback.data);
                 }
                 else if (ReceivedMessage.events[0].message.type == "text")
-                { 
-                    lineSrv.ReplyMessage(replyToken, ReceivedMessage.events[0].source.userId + " [text] " + ReceivedMessage.events[0].message.text, TakeConnection().ChannelAccessToken); 
+                {
+                    lineSrv.ReplyMessage(replyToken, ReceivedMessage.events[0].source.userId + " [text] " + ReceivedMessage.events[0].message.text);
                 }
                 else if (ReceivedMessage.events[0].type == "follow")
-                { 
-                    lineSrv.ReplyMessage(replyToken, "Thank For Follow Me :)", TakeConnection().ChannelAccessToken);
+                {
+                    lineSrv.ReplyMessage(replyToken, "Thank For Follow Me :)");
                 }
                 else if (ReceivedMessage.events[0].type == "unfollow")
                 {
-                     //save to base who unfollow 
+                    //save to base who unfollow 
                 }
                 else if (ReceivedMessage.events[0].type == "join")
                 {
-                    lineSrv.ReplyMessage(replyToken, "ขออภัย ระบบเรายังไม่รองรับการสนทนาแบบกลุ่ม", TakeConnection().ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, "ขออภัย ระบบเรายังไม่รองรับการสนทนาแบบกลุ่ม");
                 }
                 else if (ReceivedMessage.events[0].message.type == "image")
                 {
@@ -84,7 +84,7 @@ namespace AssistantLine.Controllers
                 }
                 else if (ReceivedMessage.events[0].message.type == "sticker")
                 {
-                    lineSrv.ReplyMessage(replyToken, " [] " + ReceivedMessage.events[0].message.packageId + " s " + ReceivedMessage.events[0].message.stickerId, TakeConnection().ChannelAccessToken);
+                    lineSrv.ReplyMessage(replyToken, " [] " + ReceivedMessage.events[0].message.packageId + " s " + ReceivedMessage.events[0].message.stickerId);
                 }
                 else
                 {

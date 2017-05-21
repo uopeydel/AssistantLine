@@ -30,7 +30,7 @@ namespace AssistantLine
                 var srv = (ILineService)appContext.GetObject("lineSrv");
 
                 var request = Request.Content.ReadAsStringAsync().Result;
-                return Ok(srv.getTest("[=>]", TakeConnection().ChannelAccessToken) );
+                return Ok(srv.getTest("[=>]", "TakeConnection().ChannelAccessToken") );
             }
             catch (WebException ex)
             {

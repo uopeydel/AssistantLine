@@ -283,6 +283,9 @@
     <Content Include="App\PageNotFound\PageNotFound.html" />
     <Content Include="App\TestPage\TestPage.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="connection.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\image\show\add.png" />
@@ -617,7 +620,6 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="connection.xml" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />

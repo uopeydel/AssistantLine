@@ -1,0 +1,12 @@
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\DAL.dll
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\DAL.pdb
+D:\AssistantLine\AssistantLine\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\AssistantLine\AssistantLine\DAL\obj\Debug\DAL.dll
+D:\AssistantLine\AssistantLine\DAL\obj\Debug\DAL.pdb
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Bson.dll
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Driver.Core.dll
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Driver.dll
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Bson.xml
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Driver.xml
+D:\AssistantLine\AssistantLine\DAL\bin\Debug\MongoDB.Driver.Core.xml
