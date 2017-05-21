@@ -4,14 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Service.Line.Models
+namespace DAL.ConversationModels
 {
-    class ChatLogModels
-    {
-
-    }
-
-    class UserProfileModels
+    public class ConversationModel
     {
         public string _id { get; set; }
         public string displayName { get; set; }

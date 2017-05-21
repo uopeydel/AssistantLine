@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Service.Line.ServiceInf
 {
-    public interface ILineService
+    public interface ILineServiceInf
     {
         string getTest(string dataTest ,string path);
         byte[] GetUserUploadedContent(string ContentID);

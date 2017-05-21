@@ -41,10 +41,6 @@ namespace AssistantLine.Controllers
             return userdata;
         }
         //-------------------------------------
-
-
-
-        protected static string uri = "mongodb://lapadoldb:lapadol0mlab@ds042729.mlab.com:42729/shopproject";
         protected static IMongoClient _client;
         protected static IMongoDatabase _database;
         private List<helpDeskStruct> tempHelpDeskStruct = new List<helpDeskStruct>();

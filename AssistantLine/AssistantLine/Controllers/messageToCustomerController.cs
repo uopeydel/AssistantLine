@@ -27,10 +27,10 @@ namespace AssistantLine
                 //var srv = (IDocumentService)appContext.GetObject("DocumentSrv");
                 //var request = Request.Content.ReadAsStringAsync().Result;
                 //return Ok(srv.GetDocumentListGroupByUnit(request));
-                var srv = (ILineService)appContext.GetObject("lineSrv");
+                var srv = (ICustomerServiceinf)appContext.GetObject("cusSrv");
 
                 var request = Request.Content.ReadAsStringAsync().Result;
-                return Ok(srv.getTest("[=>]", "TakeConnection().ChannelAccessToken") );
+                return Ok(srv.CreateNewCustomer(request));
             }
             catch (WebException ex)
             {

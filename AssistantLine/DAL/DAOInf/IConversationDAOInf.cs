@@ -1,4 +1,4 @@
-﻿using DAL.ConnectionData;
+﻿using DAL.ConversationModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace DAL.DAOInf
 {
-    public interface IConnectionService
+    public interface IConversationDAOInf
     {
-        ConnectionModels TakeConnection();
-        void saveLog();
+        bool CreateConversationData(ConversationModel conversationData);
     }
+
 }

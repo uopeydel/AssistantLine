@@ -11,19 +11,19 @@ using System.Dynamic;
 using Service.Line.LineMessengerSDK;
 using Newtonsoft.Json;
 using DAL.DAOInf;
-//using DAL.DAOInf;
+using DAL.Connection;
 
 namespace Service.Line.ServiceImpl
 {
-    public class LineServiceImpl : ILineService
+    public class LineServiceImpl : ILineServiceInf
     {
-        public ILogService logDAO;
-        public IConnectionService connectDAO;
+        public ILogDAOInf logDAO;
+        public Connection connect;
 
         public string getTest(string dataTest, string path)
         {
-            var a = connectDAO.TakeConnection();
-            connectDAO.saveLog();
+            var a = connect.TakeConnection();
+            //connectDAO.saveLog();
             return dataTest + "=>" + logDAO.saveChatLog("N") + "=>x" + path;
         }
 
@@ -34,7 +34,7 @@ namespace Service.Line.ServiceImpl
                 ContentID = ContentID.Trim();
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 return webClient.DownloadData("https://api.line.me/v2/bot/message/" + ContentID + "/content");
             }
             catch (Exception ex)
@@ -55,7 +55,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 return (LineUserInfoModel)JsonConvert.DeserializeObject<LineUserInfoModel>(Encoding.UTF8.GetString(webClient.DownloadData(string.Format("https://api.line.me/v2/bot/profile/{0}", (object)uid))));
             }
             catch (WebException ex)
@@ -77,7 +77,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 byte[] bytes = Encoding.UTF8.GetBytes(s);
                 return Encoding.UTF8.GetString(webClient.UploadData("https://api.line.me/v2/bot/message/push", bytes));
             }
@@ -96,7 +96,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 byte[] bytes = Encoding.UTF8.GetBytes(Message);
                 Encoding.UTF8.GetString(webClient.UploadData("https://api.line.me/v2/bot/message/push", bytes));
                 return "ok";
@@ -120,7 +120,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 byte[] bytes = Encoding.UTF8.GetBytes(s);
                 return Encoding.UTF8.GetString(webClient.UploadData("https://api.line.me/v2/bot/message/reply", bytes));
             }
@@ -138,7 +138,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 byte[] bytes = Encoding.UTF8.GetBytes(JasonData);
                 return Encoding.UTF8.GetString(webClient.UploadData("https://api.line.me/v2/bot/message/reply", bytes));
             }
@@ -156,7 +156,7 @@ namespace Service.Line.ServiceImpl
                 WebClient webClient = new WebClient();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/json");
-                webClient.Headers.Add("Authorization", "Bearer " + connectDAO.TakeConnection().ChannelAccessToken);
+                webClient.Headers.Add("Authorization", "Bearer " + connect.TakeConnection().ChannelAccessToken);
                 byte[] bytes = Encoding.UTF8.GetBytes(Message);
                 return Encoding.UTF8.GetString(webClient.UploadData("https://api.line.me/v2/bot/message/multicast", bytes));
             }

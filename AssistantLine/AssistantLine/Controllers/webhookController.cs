@@ -1,4 +1,5 @@
 ﻿using AssistantLine.APIBase;
+using Newtonsoft.Json;
 using Service.Line.ServiceInf;
 using Spring.Context.Support;
 using System;
@@ -27,7 +28,10 @@ namespace AssistantLine.Controllers
             {
                 string postData = Request.Content.ReadAsStringAsync().Result;
 
-                var lineSrv = (ILineService)appContext.GetObject("lineSrv");
+                var customerSrv = (ICustomerService)appContext.GetObject("customerSrv");
+                var lineSrv = (ILineServiceInf)appContext.GetObject("lineSrv");
+                var customerSrv = (IconversationLog)appContext.GetObject("customerSrv");
+
                 var ReceivedMessage = lineSrv.ParsingToReceievedMessage(postData);
 
                 string userId = ReceivedMessage.events[0].source.userId;
@@ -46,7 +50,18 @@ namespace AssistantLine.Controllers
                 }
                 else if (ReceivedMessage.events[0].type == "follow")
                 {
-                    lineSrv.ReplyMessage(replyToken, "Thank For Follow Me :)");
+                    var userdata = lineSrv.GetUserInfo(ReceivedMessage.events[0].source.userId);
+                    var IsOldUser = customerSrv.CreateNewCustomer(JsonConvert.SerializeObject(userdata));
+                    if (IsOldUser)
+                    {
+                        lineSrv.ReplyMessage(replyToken, "thank for follow again");
+                    }
+                    else
+                    {
+                        lineSrv.ReplyMessage(replyToken, "thank for follow");
+                    }
+
+
                 }
                 else if (ReceivedMessage.events[0].type == "unfollow")
                 {

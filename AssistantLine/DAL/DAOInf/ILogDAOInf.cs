@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAL.DAOInf
 {
-    public interface ILogService
+    public interface ILogDAOInf
     {
         bool saveChatLog(string chatData);
     }

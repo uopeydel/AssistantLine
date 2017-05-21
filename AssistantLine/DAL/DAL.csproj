@@ -53,12 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionData\ConversationModels.cs" />
+    <Compile Include="ConnectionData\AgentModels.cs" />
+    <Compile Include="ConnectionData\CustomerModels.cs" />
     <Compile Include="ConnectionData\ConnectionModels.cs" />
-    <Compile Include="DAOImpl\ConnectionServiceImpl.cs" />
-    <Compile Include="DAOInf\IConnectionService.cs" />
+    <Compile Include="ConnectionData\Connection.cs" />
+    <Compile Include="DAOImpl\CustomerDAOImpl.cs" />
+    <Compile Include="DAOImpl\ConversationDAOImpl.cs" />
+    <Compile Include="DAOInf\ICustomerDAOInf.cs" />
+    <Compile Include="DAOInf\IConversationDAOInf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DAOImpl\LogServiceImpl.cs" />
-    <Compile Include="DAOInf\ILogService.cs" />
+    <Compile Include="DAOImpl\LogDAOImpl.cs" />
+    <Compile Include="DAOInf\ILogDAOInf.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ConnectionData\connection.xml" />
